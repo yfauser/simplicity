@@ -107,12 +107,18 @@ file { '/opt/razor/tasks/vmware_esxi/ks.cfg.erb':
   owner   => 'razor-server',
   group   => 'razor-server',
   mode    => 0644,
-  content => template('razor/ks.cfg.erb'),
+  source  => 'puppet:///modules/razor/ks.cfg.erb',
   require => Class['razor::server'],
-}
+} ->
 
 package { 'razor-client':
   ensure   => installed,
   provider => gem,
   require  => Package['rubygems'],
+} ->
+
+# create broker, policy, and (TODO) the repo.
+class { 'razor::instance':
+  target_os   => 'esx',
+  target_fqdn => $server_domain,
 }

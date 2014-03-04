@@ -1,0 +1,75 @@
+FORGE
+  remote: http://forge.puppetlabs.com
+  specs:
+    puppetlabs/apt (1.4.2)
+      puppetlabs/stdlib (>= 2.2.1)
+    puppetlabs/concat (1.0.2)
+    puppetlabs/firewall (1.0.1)
+    puppetlabs/java (1.1.0)
+      puppetlabs/stdlib (>= 0.1.6)
+    puppetlabs/ntp (3.0.3)
+      puppetlabs/stdlib (>= 0.1.6)
+    puppetlabs/postgresql (3.3.0)
+      puppetlabs/apt (< 2.0.0, >= 1.1.0)
+      puppetlabs/concat (< 2.0.0, >= 1.0.0)
+      puppetlabs/firewall (>= 0.0.4)
+      puppetlabs/stdlib (< 5.0.0, >= 3.2.0)
+    puppetlabs/stdlib (4.1.0)
+    puppetlabs/tftp (0.2.1)
+      puppetlabs/xinetd (>= 1.1.0)
+    puppetlabs/xinetd (1.2.0)
+      puppetlabs/stdlib (>= 2.2.1)
+    vmware/vmware_lib (0.0.1)
+
+GIT
+  remote: git://github.com/timops/puppet-module-nfs.git
+  ref: master
+  sha: bc64af7448325e4a49af4d7b6537c0e134012449
+  specs:
+    nfs (1.1.1)
+      puppetlabs/concat (>= 1.0.2)
+      puppetlabs/stdlib (>= 3.0.1)
+
+GIT
+  remote: git://github.com/timops/puppetlabs-razor.git
+  ref: master
+  sha: 1b1108eaa2ef444d2f99a4d27b3ae1d567265ed6
+  specs:
+    razor (0.11.1-20-g1b1108e)
+      puppetlabs/java (>= 1.0.1)
+      puppetlabs/tftp (>= 0.2.1)
+
+GIT
+  remote: git://github.com/timops/vmware-dhcpd.git
+  ref: master
+  sha: daa0e0e864f64b858b548a6ea05a69440a8f137c
+  specs:
+    dhcpd (0.1.0)
+
+GIT
+  remote: git://github.com/timops/vmware-vmware_lib.git
+  ref: master
+  sha: 36f8e1ba7a73f96e5e35c6024e7cb7599ec1bdb6
+  specs:
+    vmware_lib (0.0.1)
+
+GIT
+  remote: git@github.com:timops/vmware-vcsa.git
+  ref: master
+  sha: f89aabe4c1ddd358a9b861cb0ede9c2067dc9501
+  specs:
+    vmware-vcsa (0.0.1)
+      vmware/vmware_lib (>= 0.0.1)
+
+DEPENDENCIES
+  dhcpd (>= 0)
+  nfs (>= 0)
+  puppetlabs/concat (= 1.0.2)
+  puppetlabs/ntp (= 3.0.3)
+  puppetlabs/postgresql (= 3.3.0)
+  puppetlabs/stdlib (= 4.1.0)
+  puppetlabs/tftp (= 0.2.1)
+  razor (>= 0)
+  vmware-vcsa (>= 0)
+  vmware_lib (>= 0)
+
