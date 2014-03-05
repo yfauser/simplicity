@@ -121,4 +121,5 @@ package { 'razor-client':
 class { 'razor::instance':
   target_os   => 'esx',
   target_fqdn => $server_domain,
+  iso         => '/tmp/VMware-VMvisor-Installer-5.5.0-1331820.x86_64.iso'
 }

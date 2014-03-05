@@ -4,7 +4,7 @@ FORGE
     puppetlabs/apt (1.4.2)
       puppetlabs/stdlib (>= 2.2.1)
     puppetlabs/concat (1.0.2)
-    puppetlabs/firewall (1.0.1)
+    puppetlabs/firewall (1.0.2)
     puppetlabs/java (1.1.0)
       puppetlabs/stdlib (>= 0.1.6)
     puppetlabs/ntp (3.0.3)
@@ -33,9 +33,9 @@ GIT
 GIT
   remote: git://github.com/timops/puppetlabs-razor.git
   ref: master
-  sha: 1b1108eaa2ef444d2f99a4d27b3ae1d567265ed6
+  sha: 8839ddc97d3b52bebd342e5da614de43da391895
   specs:
-    razor (0.11.1-20-g1b1108e)
+    razor (0.11.1-25-g8839ddc)
       puppetlabs/java (>= 1.0.1)
       puppetlabs/tftp (>= 0.2.1)
 
