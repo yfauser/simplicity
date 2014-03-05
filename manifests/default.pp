@@ -27,6 +27,9 @@ $dhcp_router = '10.127.1.1'
 $dhcp_dns = '10.127.1.11'
 $server_domain = 'vmware.local'
 
+# ESXi ISO location.
+$esx_iso = '/tmp/VMware-VMvisor-Installer-5.5.0-1331820.x86_64.iso'
+
 exec { '/usr/bin/apt-get -qy update': }
 
 package { [ 'ruby', 'rubygems' ]:
@@ -121,5 +124,5 @@ package { 'razor-client':
 class { 'razor::instance':
   target_os   => 'esx',
   target_fqdn => $server_domain,
-  iso         => '/tmp/VMware-VMvisor-Installer-5.5.0-1331820.x86_64.iso'
+  iso         => $esx_iso,
 }

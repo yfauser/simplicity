@@ -34,6 +34,9 @@ $dhcp_range = '10.127.1.100 10.127.1.150'
 $dhcp_router = '10.127.1.1'
 $dhcp_dns = '10.127.1.11'
 $server_domain = 'vmware.local'
+
+# ESXi ISO location.
+$esx_iso = '/tmp/VMware-VMvisor-Installer-5.5.0-1331820.x86_64.iso'
 ```
 
 ## Installation
