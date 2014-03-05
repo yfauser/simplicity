@@ -48,7 +48,7 @@ Retrieve code and edit parameters (see reference above):
     
 Copy ISO into parameter specified directory:    
     
-    $ cp ESXi.iso /tmp/ESXi.iso
+    $ cp VMware-VMvisor-Installer-5.5.0-1331820.x86_64.iso /tmp/VMware-VMvisor-Installer-5.5.0-1331820.x86_64.iso
     
 Run Puppet:
 
