@@ -38,7 +38,7 @@ package { [ 'ruby', 'rubygems' ]:
 }
 
 class { 'ntp':
-  restrict => [ '127.0.0.1', '-6 ::1', "${network_eth1} mask ${netmask_eth1} nomodify notrap nopeer" ],
+  restrict => [ '127.0.0.1', '-6 ::1', "${dhcp_network} mask ${dhcp_netmask} nomodify notrap nopeer" ],
 }
 
 class { 'nfs::server': }
