@@ -42,7 +42,7 @@ GIT
 GIT
   remote: git://github.com/timops/puppetlabs-tftp.git
   ref: master
-  sha: f3a67f3235c75c0b3e34c1be6c640c471b028e37
+  sha: 1efc7b86899d59b082e38cef830830798bc885a2
   specs:
     tftp (0.2.1)
       puppetlabs/xinetd (>= 1.1.0)
