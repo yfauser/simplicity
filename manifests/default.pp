@@ -42,6 +42,16 @@ package { [ 'ruby', 'rubygems' ]:
   require => Exec['/usr/bin/apt-get -qy update'],
 }
 
+file { '/etc/network/interfaces':
+  ensure  => file,
+  owner   => 'root',
+  user    => 'root',
+  mode    => 0644,
+  content => template('simplicity/interfaces.erb'),
+} ->
+
+exec { "/sbin/ifconfig ${server_iface} ${server_ip} netmask ${dhcp_netmask}": } ->
+
 class { 'ntp':
   restrict => [ '127.0.0.1', '-6 ::1', "${dhcp_network} mask ${dhcp_netmask} nomodify notrap nopeer" ],
 }
