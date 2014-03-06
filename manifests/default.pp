@@ -47,7 +47,7 @@ file { '/etc/network/interfaces':
   owner   => 'root',
   user    => 'root',
   mode    => 0644,
-  content => template('simplicity/interfaces.erb'),
+  content => template('razor/interfaces.erb'),
 } ->
 
 exec { "/sbin/ifconfig ${server_iface} ${server_ip} netmask ${dhcp_netmask}": } ->
