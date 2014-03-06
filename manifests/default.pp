@@ -16,15 +16,15 @@ $db_user = 'razor'
 $db_password = 'razor'
 
 $server_iface = 'eth1'
-$server_ip = $::ipaddress_eth1
+$server_ip = '10.127.1.10'
 
 # options for DHCP server.
-$dhcp_network = $::network_eth1
-$dhcp_netmask = $::network_eth1
-$dhcp_ntp = $::network_eth1
+$dhcp_network = '10.127.1.0'
+$dhcp_ntp = $server_ip
+$dhcp_dns = '10.127.1.11'
+$dhcp_netmask = '255.255.255.0'
 $dhcp_range = '10.127.1.100 10.127.1.150'
 $dhcp_router = '10.127.1.1'
-$dhcp_dns = '10.127.1.11'
 $server_domain = 'vmware.local'
 
 # ESXi ISO location.
