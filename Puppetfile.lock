@@ -40,6 +40,14 @@ GIT
       puppetlabs/tftp (>= 0.2.1)
 
 GIT
+  remote: git://github.com/timops/puppetlabs-tftp.git
+  ref: master
+  sha: f3a67f3235c75c0b3e34c1be6c640c471b028e37
+  specs:
+    tftp (0.2.1)
+      puppetlabs/xinetd (>= 1.1.0)
+
+GIT
   remote: git://github.com/timops/vmware-dhcpd.git
   ref: master
   sha: 3261f4e8adc1fa6844e1e5e440de76295f2693eb
@@ -68,8 +76,8 @@ DEPENDENCIES
   puppetlabs/ntp (= 3.0.3)
   puppetlabs/postgresql (= 3.3.0)
   puppetlabs/stdlib (= 4.1.0)
-  puppetlabs/tftp (= 0.2.1)
   razor (>= 0)
+  tftp (>= 0)
   vmware-vcsa (>= 0)
   vmware_lib (>= 0)
 

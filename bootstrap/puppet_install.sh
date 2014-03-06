@@ -9,7 +9,7 @@ DPKG_ARGS='-i'
 RESULT=0
 
 # prerequisite packages
-OTHER_PKGS='curl git unzip rubygems'
+OTHER_PKGS='curl git unzip ruby rubygems'
 
 # retrieve repo dpkg from puppetlabs
 function dl()
