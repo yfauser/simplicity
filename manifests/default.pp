@@ -39,7 +39,6 @@ package { [ 'ruby', 'rubygems' ]:
 
 class { 'ntp':
   restrict => [ '127.0.0.1', '-6 ::1', "${network_eth1} mask ${netmask_eth1} nomodify notrap nopeer" ],
-  options  => '/var/lib/tftpboot',
 }
 
 class { 'nfs::server': }
@@ -64,6 +63,7 @@ class { 'dhcpd':
 class { 'tftp':
   directory => '/var/lib/tftpboot',
   address   => $server_ip,
+  options  => '/var/lib/tftpboot',
 }
 
 file { '/var/lib/tftpboot/bootstrap.ipxe':
