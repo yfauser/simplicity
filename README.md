@@ -58,7 +58,7 @@ Run Puppet:
     
 Copy Microkernel into required path:
 
-    $ tar tvf microkernel-004.tar -C /var/lib/razor/repo-store/
+    $ tar xvf microkernel-004.tar -C /var/lib/razor/repo-store/
 
 ## Post-install
 
