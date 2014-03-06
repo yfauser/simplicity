@@ -115,6 +115,14 @@ file { '/opt/razor/tasks/vmware_esxi/ks.cfg.erb':
   require => Class['razor::server'],
 } ->
 
+file { '/opt/razor/tasks/vmware_esxi/joinvcenter.py':
+  ensure  => file,
+  owner   => 'razor-server'
+  group   => 'razor-server',
+  mode    => 0644,
+  source  => 'puppet:///modules/razor/joinvcenter.py',
+} ->
+
 package { 'razor-client':
   ensure   => installed,
   provider => gem,
