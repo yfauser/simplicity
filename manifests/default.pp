@@ -63,7 +63,7 @@ class { 'dhcpd':
 class { 'tftp':
   directory => '/var/lib/tftpboot',
   address   => $server_ip,
-  options  => '/var/lib/tftpboot',
+  options  => '--secure',
 }
 
 file { '/var/lib/tftpboot/bootstrap.ipxe':
