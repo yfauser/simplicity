@@ -19,6 +19,7 @@ FORGE
       puppetlabs/xinetd (>= 1.1.0)
     puppetlabs/xinetd (1.2.0)
       puppetlabs/stdlib (>= 2.2.1)
+    saz/resolv_conf (2.0.0)
     vmware/vmware_lib (0.0.1)
 
 GIT
@@ -77,6 +78,7 @@ DEPENDENCIES
   puppetlabs/postgresql (= 3.3.0)
   puppetlabs/stdlib (= 4.1.0)
   razor (>= 0)
+  saz/resolv_conf (= 2.0.0)
   tftp (>= 0)
   vmware-vcsa (>= 0)
   vmware_lib (>= 0)
