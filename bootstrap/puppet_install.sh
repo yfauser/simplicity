@@ -9,7 +9,7 @@ DPKG_ARGS='-i'
 RESULT=0
 
 # prerequisite packages
-OTHER_PKGS='curl git unzip'
+OTHER_PKGS='curl git unzip rubygems'
 
 # retrieve repo dpkg from puppetlabs
 function dl()
@@ -34,7 +34,7 @@ function help()
   echo ''
   echo 'puppet_install.sh [-dhp]'
   echo ''
-  echo '-d: download (deb) only'
+  echo '-i: install puppet'
   echo '-h: help'
   echo '-p: url of proxy server (for curl)'
   echo '-b: name of the puppet zipfile to bootstrap from'
@@ -61,25 +61,25 @@ function puppet_run()
 }
 
 # if no options a specified the script will perform download AND install
-while getopts "b:p:dh" OPT
+while getopts "b:p:ih" OPT
 do
   case $OPT in
     h) help; exit 2;;
-    d) INSTALL=0;;
+    i) INSTALL=1;;
     p) PROXY=$OPTARG;;
     b) BOOTSTRAP=$OPTARG;;
     *) echo 'invalid syntax'; help;;
   esac
 done
 
-prereqs_install $OTHER_PKGS
-dl $SITE $REMOTE_FILE $PROXY
-
-if [ $INSTALL -eq 1 ]; then
+if [ $INSTALL ]; then
+  prereqs_install $OTHER_PKGS
+  dl $SITE $REMOTE_FILE $PROXY
   install $DPKG_ARGS $REMOTE_FILE
   agent_install
-  if [ $BOOTSTRAP ]; then
-    PUPDIR=${BOOTSTRAP/%.[a-z]*}
-    puppet_run $BOOTSTRAP $PUPDIR
-  fi
+fi
+
+if [ $BOOTSTRAP ]; then
+  PUPDIR=${BOOTSTRAP/%.[a-z]*}
+  puppet_run $BOOTSTRAP $PUPDIR
 fi

@@ -19,7 +19,7 @@ mod 'razor',
   :git => 'git://github.com/timops/puppetlabs-razor.git'
 
 mod 'vmware-vcsa',
-  :git => 'git@github.com:timops/vmware-vcsa.git'
+  :git => 'git://github.com/timops/vmware-vcsa.git'
 
 mod 'vmware_lib',
-    :git => 'git://github.com/timops/vmware-vmware_lib.git'
+  :git => 'git://github.com/timops/vmware-vmware_lib.git'
