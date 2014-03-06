@@ -19,7 +19,6 @@ FORGE
       puppetlabs/xinetd (>= 1.1.0)
     puppetlabs/xinetd (1.2.0)
       puppetlabs/stdlib (>= 2.2.1)
-    saz/resolv_conf (2.0.0)
     vmware/vmware_lib (0.0.1)
 
 GIT
@@ -34,9 +33,9 @@ GIT
 GIT
   remote: git://github.com/timops/puppetlabs-razor.git
   ref: master
-  sha: c25042deb34ba6d977569b688b00975646fa85c7
+  sha: 3bd79cf9c2393fb05b1ee9c69e40f217e3e8e411
   specs:
-    razor (0.11.1-26-gc25042d)
+    razor (0.11.1-27-g3bd79cf)
       puppetlabs/java (>= 1.0.1)
       puppetlabs/tftp (>= 0.2.1)
 
@@ -78,7 +77,6 @@ DEPENDENCIES
   puppetlabs/postgresql (= 3.3.0)
   puppetlabs/stdlib (= 4.1.0)
   razor (>= 0)
-  saz/resolv_conf (= 2.0.0)
   tftp (>= 0)
   vmware-vcsa (>= 0)
   vmware_lib (>= 0)

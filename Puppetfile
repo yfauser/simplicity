@@ -7,7 +7,6 @@ mod 'puppetlabs/postgresql', '3.3.0'
 mod 'puppetlabs/ntp', '3.0.3'
 mod 'puppetlabs/stdlib', '4.1.0'
 mod 'puppetlabs/concat', '1.0.2'
-mod 'saz/resolv_conf', '2.0.0'
 
 mod 'nfs',
   :git => 'git://github.com/timops/puppet-module-nfs.git'

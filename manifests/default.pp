@@ -32,11 +32,6 @@ $esx_iso = '/tmp/VMware-VMvisor-Installer-5.5.0-1331820.x86_64.iso'
 
 exec { '/usr/bin/apt-get -qy update': }
 
-class { 'resolv_conf':
-  searchpath        => $server_domain,
-  nameservers       => [ $dhcp_dns ],
-}
-
 package { [ 'ruby', 'rubygems' ]:
   ensure  => installed,
   require => Exec['/usr/bin/apt-get -qy update'],
