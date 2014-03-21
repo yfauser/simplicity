@@ -40,7 +40,7 @@ package { [ 'ruby', 'rubygems' ]:
 file { '/etc/network/interfaces':
   ensure  => file,
   owner   => 'root',
-  user    => 'root',
+  group   => 'root',
   mode    => 0644,
   content => template('razor/interfaces.erb'),
 } ->

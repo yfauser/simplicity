@@ -53,8 +53,9 @@ Copy ISO into parameter specified directory:
 Run Puppet:
 
     $ cd simplicity
+    $ ./bootstrap/puppet-install.sh -i
     $ librarian-puppet install
-    $ puppet apply --moduledir=./modules ./manifests/default.pp
+    $ ./bootstrap/puppet-install.sh -b
     
 Copy Microkernel into required path:
 
