@@ -9,7 +9,9 @@ DPKG_ARGS='-i'
 RESULT=0
 
 # prerequisite packages
-OTHER_PKGS='curl git unzip ruby rubygems'
+PRE_PKGS='curl git unzip ruby'
+POST_PKGS='rubygems'
+GEMS='librarian-puppet'
 
 # retrieve repo dpkg from puppetlabs
 function dl()
@@ -47,10 +49,15 @@ function prereqs_install()
   apt-get install $1 -yq
 }
 
+function post_install()
+{
+  apt-get install $1 -yq
+  gem install $2 --no-rdoc --no-ri
+}
+
 function agent_install()
 {
-  apt-get update -yq
-  apt-get install unzip git puppet -yq
+  apt-get install puppet -yq
 }
 
 # extract modules and depedent manifests in current directory, then invoke the run
@@ -73,10 +80,11 @@ do
 done
 
 if [ $INSTALL ]; then
-  prereqs_install $OTHER_PKGS
+  prereqs_install $PRE_PKGS
   dl $SITE $REMOTE_FILE $PROXY
   install $DPKG_ARGS $REMOTE_FILE
   agent_install
+  post_install $POST_PKGS $GEMS
 fi
 
 if [ $BOOTSTRAP ]; then
