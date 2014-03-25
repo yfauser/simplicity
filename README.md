@@ -63,6 +63,7 @@ Copy Microkernel into required path:
 
 ## Post-install
 
+Reboot VM to ensure that all local DNS configurations (resolvconf) are updated.
 razor-client is installed and should be on the user's $PATH.  Run 'razor' to test.
 
 
