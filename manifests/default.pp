@@ -150,7 +150,7 @@ package { 'razor-client':
 exec { 'tar xvf /tmp/microkernel-004.tar -C /var/lib/razor/repo-store/':
   onlyif  => ['test -f /tmp/microkernel-004.tar'],
   creates => '/var/lib/razor/repo-store/microkernel/initrd0.img',
-  path    => ['/bin'],
+  path    => ['/bin', '/usr/bin'],
 } ->
 
 # create broker, policy, and (TODO) the repo.
