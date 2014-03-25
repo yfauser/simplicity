@@ -33,9 +33,9 @@ GIT
 GIT
   remote: git://github.com/timops/puppetlabs-razor.git
   ref: master
-  sha: 3bd79cf9c2393fb05b1ee9c69e40f217e3e8e411
+  sha: 3432f71a835a6d0ea3e4c6c4d87a3194b2478795
   specs:
-    razor (0.11.1-27-g3bd79cf)
+    razor (0.11.1-29-g3432f71)
       puppetlabs/java (>= 1.0.1)
       puppetlabs/tftp (>= 0.2.1)
 
