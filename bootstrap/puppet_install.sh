@@ -55,6 +55,7 @@ function post_install()
 
 function agent_install()
 {
+  apt-get update -yq
   apt-get install puppet -yq
 }
 
