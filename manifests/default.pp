@@ -147,6 +147,12 @@ package { 'razor-client':
   require  => Package['rubygems'],
 } ->
 
+exec { 'tar xvf /tmp/microkernel-004.tar -C /var/lib/razor/repo-store/':
+  onlyif  => ['test -f /tmp/microkernel-004.tar'],
+  creates => '/var/lib/razor/repo-store/microkernel/initrd0.img',
+  path    => ['/bin'],
+} ->
+
 # create broker, policy, and (TODO) the repo.
 class { 'razor::instance':
   target_os   => 'esx',

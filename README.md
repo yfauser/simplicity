@@ -57,10 +57,6 @@ Run Puppet:
     $ librarian-puppet install
     $ ./bootstrap/puppet-install.sh -b
     
-Copy Microkernel into required path:
-
-    $ tar xvf microkernel-004.tar -C /var/lib/razor/repo-store/
-
 ## Post-install
 
 Reboot VM to ensure that all local DNS configurations (resolvconf) are updated.
