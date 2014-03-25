@@ -45,6 +45,14 @@ file { '/etc/network/interfaces':
   content => template('razor/interfaces.erb'),
 } ->
 
+file { '/etc/resolvconf/resolv.conf.d/head':
+  ensure  => file,
+  owner   => 'root',
+  group   => 'root',
+  mode    => 0644,
+  content => template('razor/head.erb'),
+} ->
+
 exec { "/sbin/ifconfig ${server_iface} ${server_ip} netmask ${dhcp_netmask}": } ->
 
 class { 'ntp':
