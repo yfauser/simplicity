@@ -57,7 +57,7 @@ GIT
 GIT
   remote: git://github.com/timops/vmware-vcsa.git
   ref: master
-  sha: f89aabe4c1ddd358a9b861cb0ede9c2067dc9501
+  sha: 0f17291081d0330774c9d2e0fd9f8722a4fa2773
   specs:
     vmware-vcsa (0.0.1)
       vmware/vmware_lib (>= 0.0.1)

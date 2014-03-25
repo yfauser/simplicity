@@ -11,12 +11,13 @@ help()
   echo ''
   echo 'vcsa_deploy.sh <appliance_file>'
   echo ''
+  exit 0
 }
 
 # run the vcsa configuration manifest
 puppet_run()
 {
-    puppet apply --modulepath=$1/modules $1/manifests/vmware-vcsa/manifests/init.pp
+    puppet apply --modulepath=$1/modules $1/modules/vmware-vcsa/manifests/init.pp
 }
 
 if [ $# -ne 1 ]; then
@@ -30,7 +31,7 @@ OVF_APPLIANCE=$1
 
 source $PWD/vcsa.conf
 
-$OVFTOOL --acceptAllEulas --network="${MGMT_NETWORK}" --datastore="${DATASTORE}" --powerOn --vmFolder=${VM_FOLDER} --prop:vami.hostname=${VSCA_HOSTNAME} \
+$OVFTOOL --acceptAllEulas --noSSLVerify --network="${MGMT_NETWORK}" --datastore="${DATASTORE}" --powerOn --vmFolder=${VM_FOLDER} --prop:vami.hostname=${VCSA_HOSTNAME} \
   ${OVF_APPLIANCE} vi://${VCSA_USERNAME}:${VCSA_PASSWORD}@${TARGET_VCENTER}/${TARGET_HOST}
 
 # wait for ssh to come up on the newly provisioned appliance
