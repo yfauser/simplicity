@@ -1,0 +1,10 @@
+[DCINSTALL] 
+InstallDNS=yes
+NewDomain=forest
+NewDomainDNSName=vmware.local
+DomainNetBiosName=VMWARE
+ReplicaOrNewDomain=domain
+ForestLevel=3
+DomainLevel=3
+RebootOnCompletion=no
+SafeModeAdminPassword=Password#1
