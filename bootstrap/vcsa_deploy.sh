@@ -39,3 +39,6 @@ sleep 60
 
 PUPDIR=`dirname $PWD`
 puppet_run $PUPDIR
+
+# ./createdc.py -s vcsa55 -u root -p vmware -d DC1
+# ./createcluster.py -s vcsa55 -u root -p vmware -c POC
