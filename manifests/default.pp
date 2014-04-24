@@ -15,14 +15,14 @@
 $db_user = 'razor'
 $db_password = 'razor'
 
-$server_iface = 'eth1'
-$server_ip = '10.127.1.10'
+$server_iface = 'eth1.150'
+$server_ip = $::ipaddress_eth1_150
 
 # options for DHCP server.
-$dhcp_network = '10.127.1.0'
+$dhcp_network = $::network_eth1_150
 $dhcp_ntp = $server_ip
 $dhcp_dns = '10.127.1.11'
-$dhcp_netmask = '255.255.255.0'
+$dhcp_netmask = $::netmask_eth1_150
 $dhcp_range = '10.127.1.100 10.127.1.150'
 $dhcp_router = '10.127.1.1'
 $server_domain = 'vmware.local'
@@ -32,7 +32,7 @@ $esx_iso = '/tmp/VMware-VMvisor-Installer-5.5.0-1331820.x86_64.iso'
 
 exec { '/usr/bin/apt-get -qy update': }
 
-package { [ 'ruby', 'rubygems' ]:
+package { [ 'ruby1.9.1', 'rubygems1.9.1' ]:
   ensure  => installed,
   require => Exec['/usr/bin/apt-get -qy update'],
 }
