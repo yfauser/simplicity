@@ -26,11 +26,11 @@ This project aims to deploy a Razor environment setup to quickly pump out fully 
 
 # Interface to be used for tftp/dhcpd/etc.
 $server_iface = 'eth1'
-$server_ip = $::ipaddress_eth1
+$server_ip = '10.127.1.10'
 
 # options for DHCP server.
-$dhcp_network = $::network_eth1
-$dhcp_netmask = $::netmask_eth1
+$dhcp_network = '10.127.1.0'
+$dhcp_netmask = '255.255.255.0'
 $dhcp_ntp = $server_ip
 $dhcp_range = '10.127.1.100 10.127.1.150'
 $dhcp_router = '10.127.1.1'
@@ -48,6 +48,10 @@ You will want to give two ethernet interfaces to the Ubuntu Host, one for manage
 
 Retrieve code and edit parameters (see reference above):
 
+    $ mkdir /etc/puppet
+    $ mkdir /etc/puppet/modules
+    $ apt-get install git vim-puppet
+    $ vim-addons install puppet
     $ cd /etc/puppet/modules/
     $ git clone https://github.com/timops/simplicity.git
     $ vim simplicity/manifests/default.pp
@@ -59,8 +63,9 @@ Copy the vSphere ESXi ISO and the Razor microkernel into parameter specified dir
     
 Run Puppet:
 
-    $ cd simplicity
+    $ cd /etc/puppet/modules/simplicity
     $ ./bootstrap/puppet-install.sh -i
+    $ librarian-puppet config path --global /etc/puppet/modules/
     $ librarian-puppet install
     $ ./bootstrap/puppet-install.sh -b
     
