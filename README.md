@@ -5,7 +5,7 @@ This project aims to deploy a Razor environment setup to quickly pump out fully 
 ## Dependencies
 
 * Tested operating system(s): Ubuntu 12.04 x86_64
-* Ruby 1.9.x
+* Ruby 1.9.x, Ruby-dev 1.9.x, Rubygems 1.9.x, build-essential
 * Puppet 3.4.x or higher
 * net-ssh gem (required for vmware-vcsa Puppet module)
 * librarian-puppet gem
