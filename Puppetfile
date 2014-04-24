@@ -8,20 +8,20 @@ mod 'puppetlabs/ntp', '3.0.3'
 mod 'puppetlabs/stdlib', '4.1.0'
 mod 'puppetlabs/concat', '1.0.2'
 
-mod 'nfs',
+mod 'timops/nfs',
   :git => 'git://github.com/timops/puppet-module-nfs.git'
 
-mod 'tftp',
+mod 'timops/tftp',
   :git => 'git://github.com/timops/puppetlabs-tftp.git'
 
-mod 'dhcpd',
+mod 'timops/dhcpd',
   :git => 'git://github.com/timops/vmware-dhcpd.git'
 
-mod 'razor',
+mod 'timops/razor',
   :git => 'git://github.com/timops/puppetlabs-razor.git'
 
-mod 'vmware-vcsa',
+mod 'timpos/vmware-vcsa',
   :git => 'git://github.com/timops/vmware-vcsa.git'
 
-mod 'vmware_lib',
+mod 'timops/vmware_lib',
   :git => 'git://github.com/timops/vmware-vmware_lib.git'

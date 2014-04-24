@@ -26,7 +26,7 @@ GIT
   ref: master
   sha: bc64af7448325e4a49af4d7b6537c0e134012449
   specs:
-    nfs (1.1.1)
+    timops/nfs (1.1.1)
       puppetlabs/concat (>= 1.0.2)
       puppetlabs/stdlib (>= 3.0.1)
 
@@ -35,7 +35,7 @@ GIT
   ref: master
   sha: 3432f71a835a6d0ea3e4c6c4d87a3194b2478795
   specs:
-    razor (0.11.1-29-g3432f71)
+    timops/razor (0.11.1-29-g3432f71)
       puppetlabs/java (>= 1.0.1)
       puppetlabs/tftp (>= 0.2.1)
 
@@ -44,7 +44,7 @@ GIT
   ref: master
   sha: 1efc7b86899d59b082e38cef830830798bc885a2
   specs:
-    tftp (0.2.1)
+    timops/tftp (0.2.1)
       puppetlabs/xinetd (>= 1.1.0)
 
 GIT
@@ -52,14 +52,14 @@ GIT
   ref: master
   sha: 3261f4e8adc1fa6844e1e5e440de76295f2693eb
   specs:
-    dhcpd (0.1.0)
+    timops/dhcpd (0.1.0)
 
 GIT
   remote: git://github.com/timops/vmware-vcsa.git
   ref: master
   sha: 0f17291081d0330774c9d2e0fd9f8722a4fa2773
   specs:
-    vmware-vcsa (0.0.1)
+    timpos/vmware-vcsa (0.0.1)
       vmware/vmware_lib (>= 0.0.1)
 
 GIT
@@ -67,17 +67,17 @@ GIT
   ref: master
   sha: 36f8e1ba7a73f96e5e35c6024e7cb7599ec1bdb6
   specs:
-    vmware_lib (0.0.1)
+    timops/vmware_lib (0.0.1)
 
 DEPENDENCIES
-  dhcpd (>= 0)
-  nfs (>= 0)
   puppetlabs/concat (= 1.0.2)
   puppetlabs/ntp (= 3.0.3)
   puppetlabs/postgresql (= 3.3.0)
   puppetlabs/stdlib (= 4.1.0)
-  razor (>= 0)
-  tftp (>= 0)
-  vmware-vcsa (>= 0)
-  vmware_lib (>= 0)
+  timops/dhcpd (>= 0)
+  timops/nfs (>= 0)
+  timops/razor (>= 0)
+  timops/tftp (>= 0)
+  timops/vmware_lib (>= 0)
+  timpos/vmware-vcsa (>= 0)
 
