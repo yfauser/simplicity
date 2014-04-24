@@ -9,7 +9,7 @@ DPKG_ARGS='-i'
 RESULT=0
 
 # prerequisite packages
-PRE_PKGS='curl git unzip ruby1.9.1 rubygems1.9.1 ruby1.9.1-dev build-essential'
+PRE_PKGS='curl git unzip ruby1.9.1 rubygems1.9.1 ruby1.9.1-dev build-essential vlan'
 GEMS='librarian-puppet net-ssh'
 
 # retrieve repo dpkg from puppetlabs
@@ -62,7 +62,7 @@ function agent_install()
 # run some puppet!
 function puppet_run()
 {
-    puppet apply --modulepath=$1/modules $1/manifests/default.pp
+    puppet apply --modulepath=/etc/puppet/modules /etc/puppet/modules//simplicity/manifests/default.pp
 }
 
 # if no options a specified the script will perform download AND install
