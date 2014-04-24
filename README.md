@@ -30,8 +30,8 @@ $server_ip = $::ipaddress_eth1
 
 # options for DHCP server.
 $dhcp_network = $::network_eth1
-$dhcp_netmask = $::network_eth1
-$dhcp_ntp = $::network_eth1
+$dhcp_netmask = $::netmask_eth1
+$dhcp_ntp = $server_ip
 $dhcp_range = '10.127.1.100 10.127.1.150'
 $dhcp_router = '10.127.1.1'
 $dhcp_dns = '10.127.1.11'
@@ -43,14 +43,8 @@ $esx_iso = '/tmp/VMware-VMvisor-Installer-5.5.0-1331820.x86_64.iso'
 
 ## Installation
 
-Install an Ubuntu 12.04 host with the dependencies described above:
-
-See this link on how to install the latest Puppet release on Ubuntu: http://docs.puppetlabs.com/guides/puppetlabs_package_repositories.html
-
-    $ apt-get install ruby1.9.1 ruby1.9.1-dev git puppet build-essential vim-puppet
-    $ gem install net-ssh
-    $ gem install librarian-puppet
-    $ vim-addon install puppet
+Install an Ubuntu 12.04 host, the dependencies will later be installed by the 'puppet-install.sh' script.
+You will want to give two ethernet interfaces to the Ubuntu Host, one for management of the box itself, and one to bind the dhcp/tftp service on (bootstrap interface). Alternatively you could use one physical interface with VLANs.
 
 Retrieve code and edit parameters (see reference above):
 
