@@ -9,7 +9,7 @@ DPKG_ARGS='-i'
 RESULT=0
 
 # prerequisite packages
-PRE_PKGS='curl git unzip ruby rubygems'
+PRE_PKGS='curl git unzip ruby1.9.1 rubygems1.9.1'
 GEMS='librarian-puppet net-ssh'
 
 # retrieve repo dpkg from puppetlabs
