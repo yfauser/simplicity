@@ -5,7 +5,9 @@ This project aims to deploy a Razor environment setup to quickly pump out fully 
 ## Dependencies
 
 * Tested operating system(s): Ubuntu 12.04 x86_64
+* git
 * Ruby 1.9.x
+* Ruby-dev 1.9.x
 * Puppet 3.4.x or higher
 * net-ssh gem (required for vmware-vcsa Puppet module)
 * librarian-puppet gem
@@ -41,14 +43,25 @@ $esx_iso = '/tmp/VMware-VMvisor-Installer-5.5.0-1331820.x86_64.iso'
 
 ## Installation
 
+Install an Ubuntu 12.04 host with the dependencies described above:
+
+See this link on how to install the latest Puppet release on Ubuntu: http://docs.puppetlabs.com/guides/puppetlabs_package_repositories.html
+
+    $ apt-get install ruby1.9.1 ruby1.9.1-dev git puppet build-essential vim-puppet
+    $ gem install net-ssh
+    $ gem install librarian-puppet
+    $ vim-addon install puppet
+
 Retrieve code and edit parameters (see reference above):
 
-    $ git clone git@github.com:timops/simplicity.git
-    $ vi simplicity/manifests/default.pp
+    $ cd /etc/puppet/modules/
+    $ git clone https://github.com/timops/simplicity.git
+    $ vim simplicity/manifests/default.pp
     
-Copy ISO into parameter specified directory:    
+Copy the vSphere ESXi ISO and the Razor microkernel into parameter specified directory:    
     
     $ cp VMware-VMvisor-Installer-5.5.0-1331820.x86_64.iso /tmp/VMware-VMvisor-Installer-5.5.0-1331820.x86_64.iso
+    $ cp microkernel-004.tar /tmp/microkernel-004.tar
     
 Run Puppet:
 
